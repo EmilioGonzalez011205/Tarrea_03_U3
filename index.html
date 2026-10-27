@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="estilo.css">
+  <script src="https://code.jquery.com/jquery-4.0.0.js"></script>
+</head>
+<body>
+  <h1 class="centrar ancho">FORMULARIO-CONTACTANOS</h1>
+  <div class="contenedor_formulario centrar ancho">
+    <div class="contenedor_labels margen">
+      <label for="Nombre">* Nombre:</label>
+      <br>
+      <label for="Email">Email:</label>
+      <br>
+      <label for="Telefono">Teléfono:</label>
+      <br>
+      <label for="Fecha">* Fecha:</label>
+      <br>
+      <label for="Comentarios">* Comentarios</label>
+    </div>
+    <div class="contenedor_campos margen">
+      <form action="">
+        <input id="Nombre" name="Nombre" type="text">
+        <br>
+        <input id="email" name="email" type="email">
+        <br>
+        <input id="telefono" name="telefono" type="tel" placeholder="Ejem:9991234567">
+        <br>
+        <input id="Fecha" name="fecha" type="date" placeholder="dd/mm/aaaa">
+        <br>
+        <textarea name="Comentarios" id="Comentarios"></textarea>
+        <br>
+        <button id="btn_validar" name="btn_validar" type="button">Enviar comentario</button>
+      </form>
+    </div>
+  </div>
+
+
+  <!-- funciones del sitio web -->
+   <!-- validar nombre -->
+  <script>
+    $("#btn_validar").click(function (){
+      if ($("#Nombre").val().trim() == ''){
+        alert("Escribe tu nombre");
+        $("#Nombre").focus();
+        return 0;
+      }
+      //validar fecha
+      if ($("#Fecha").val().trim() == ''){
+        alert("Indique la fecha");
+        $("#Fecha").focus();
+        return 0;
+      }
+      //validar comentarios
+      if ($("#Comentarios").val().trim() == ''){
+        alert("Escriba un comentario");
+        $("#Comentarios").focus();
+        return 0;
+      }
+
+      $("#formulariocomentarios").submit();
+    });
+  </script>
+</body>
+</html>
